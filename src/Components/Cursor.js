@@ -2,8 +2,6 @@ import React from "react";
 
 function Cursor(){
     const delay =  18
-    const cursorVisible = React.useRef(true)
-    const cursorEnlarged = React.useRef(false)
 
     const endX = React.useRef(window.innerWidth / 2)
     const endY = React.useRef(window.innerHeight / 2)
@@ -14,19 +12,7 @@ function Cursor(){
     const dot = React.useRef()
     const dotOutline = React.useRef()
 
-    const toggleCursorVisibility = () => {
-        if(cursorVisible.current) {
-            dot.current.style.opacity = 1
-            dotOutline.current.style.opacity = 1
-        } else {
-            dot.current.style.opacity = 0
-            dotOutline.current.style.opacity = 0
-        }
-    }
-
     const mouseMoveEvent = e =>{
-        cursorVisible.current = true
-        toggleCursorVisibility()
         endX.current = e.pageX
         endY.current = e.pageY
 
