@@ -3,9 +3,9 @@ import React from "react";
 function Navbar(){
     return(
         <nav>
-            <h3>PROJECT</h3>
-            <h3>ABOUT</h3>
-            <h3>CONTACT</h3>
+            <h3 className='menu--item'><a href="#projects">PROJECTS</a></h3>
+            <h3 className='menu--item'><a href="#about">ABOUT</a></h3>
+            <h3 className='menu--item'><a href="#contact">CONTACT</a></h3>
         </nav>
     )
 }

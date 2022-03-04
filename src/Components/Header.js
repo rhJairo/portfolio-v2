@@ -6,14 +6,13 @@ function Header(){
     
     React.useEffect(()=>{
         let tl = gsap.timeline({ repeat: -1 });
-        tl.to(titleRef.current, 30, { backgroundPosition: "-960px 0" });
+        tl.to(titleRef.current, { backgroundPosition: "-960px 0", duration: 30});
     })
     
     return(
         <header>
-            <h1 className="title" ref={titleRef}>
-                Jairo Rubio<br/>Frontend Developer
-            </h1>
+            <h1>Jairo Rubio</h1>
+            <h1 className="title" ref={titleRef}> Frontend Developer</h1>
         </header>
     )
 }
