@@ -1,8 +1,10 @@
 import React from "react";
 
 function Presentation(){
+
     return(
-        <div className="about--container">
+        <div id='about' >
+            <p className="content--title">pepega </p>
         </div>
     )
 }
