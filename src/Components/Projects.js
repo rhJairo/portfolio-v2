@@ -1,59 +1,85 @@
 import React from 'react'
+import HoverVideoPlayer from "react-hover-video-player";
+import PausedOverlay from "./PausedOverlay";
+import LoadingOverlay from "./LoadingOverlay";
 
-function Projects(props){
+import Video1 from '../Media/2022-03-04 22-08-02.mp4'
+import Cover1 from '../Media/emoji.png'
+import Cover2 from '../Media/message.png'
+import Cover3 from '../Media/ml.png'
+import Cover4 from '../Media/portfolio.png'
+
+function Projects(){
+    const [isModalActive, setIsModalActive] = React.useState(false)
+    const styleChange = {
+        opacity: '1',
+        transition: 'opacity 0.9s ease-in'
+    }
+     const showModal = () =>{
+        // e.preventDefault()
+        setIsModalActive(!isModalActive)
+        console.log(isModalActive)
+    }
+    const modal = 
+    (<div className='modal--container'> 
+        <div style={styleChange} className='content--container'>
+        <div onClick={showModal} className='btn--close'>Close</div>
+            peepeepoopoo
+        </div>
+    </div>)
+    
+    
+    console.log(isModalActive)
     return(
         <>
-        <h2 className='section--title' id='projects'>Here you can check some of <span>my projects</span></h2>
-        <div className='projects--container' ref={props.container}>
-        <div className='text-wrap'>
-            <div className='content--container' ref={props.text}>
-                <h2 className='content--title'>Emoji Hangman Game</h2>
-                <p className='content--description'>
-                    Play the classic game <span>hangman</span> on the web.
-                    Try to guess the movie before the <span>emoji</span> dies.
-                </p>
-                <p className='content--details'>
-                    Frontend: <span>REACT  HTML CSS JavaScript</span>.<br/>
-                    Data fetched from a free <span>Movie API</span>
-                </p>
-            </div>
-            <div className='content--container' ref={props.text}>
-                <h2 className='content--title'>Real-Time Chatroom</h2>
-                <p className='content--description'>
-                    Login with your Google account to enter this public Chatroom.
-                    (Theres no <span>live demo</span>because the auto-moderation is a paid feature)
-                </p>
-                <p className='content--details'>
-                    Frontend: <span>REACT  HTML CSS JavaScript</span>.<br/>
-                    User autentication with google and database for message log made with <span>Firebase.</span>
-                </p>
-            </div>
-            <div className='content--container' ref={props.text}>
-                <h2 className='content--title'>Object Recognition with Machine Learning</h2>
-                <p className='content--description'>
-                    Give camera access to this app, 
-                    then show it something and it will guess what it is
-                </p>
-                <p className='content--details'>
-                    Frontend: <span>REACT  HTML CSS JavaScript</span>.<br/><br/>
-                </p>
-            </div>
-            <div className='content--container' ref={props.text}>
-                <h2 className='content--title'>This Portfolio Website</h2>
-                <p className='content--description'>
-                    This is my personal portfolio. I use it to present some of my projects and
-                    tell a bit about myself too.
-                </p>
-                <p className='content--details'>
-                    Frontend: <span>REACT GSAP HTML CSS JavaScript</span>.<br/><br/>
-                </p>
-            </div>
-        </div>
+        <h2 className='section--title' id='projects'>Here you can check <span>some</span> of <span>my projects</span></h2>
+        <div className='projects--container'>
+        
         <div className='p-wrap'>
-          <div className='image--container' ref={props.image}></div>
-          <div className='image--container' ref={props.image}></div>
-          <div className='image--container' ref={props.image}></div>
-          <div className='image--container last' ref={props.image}></div>
+            {/* <HoverVideoPlayer
+                className='image--container'
+                videoSrc={Video1}
+                pausedOverlay={<PausedOverlay imageURL={Cover1}/>}
+                loadingOverlay={<LoadingOverlay />}
+            />
+            <HoverVideoPlayer
+                className='image--container'
+                videoSrc={Video1}
+                pausedOverlay={<PausedOverlay imageURL={Cover2}/>}
+                loadingOverlay={<LoadingOverlay />}
+            />
+            <HoverVideoPlayer
+                className='image--container'
+                videoSrc={Video1}
+                pausedOverlay={<PausedOverlay imageURL={Cover3}/>}
+                loadingOverlay={<LoadingOverlay />}
+            />
+            <HoverVideoPlayer
+                className='image--container'
+                videoSrc={Video1}
+                pausedOverlay={<PausedOverlay imageURL={Cover4}/>}
+                loadingOverlay={<LoadingOverlay />}
+            /> */}
+            {isModalActive && modal}
+            <div className='image--container'>
+                <img src={Cover1} alt={`thumbnail_${Cover1}`} />
+                <div onClick={showModal} className='hover--content'>Learn More</div>
+            </div>
+            <div className='image--container'>
+                <img src={Cover2} alt={`thumbnail_${Cover2}`} />
+                <div onClick={showModal} className='hover--content'>Learn More</div>
+            </div>
+            <div className='image--container'>
+                <img src={Cover3} alt={`thumbnail_${Cover3}`} />
+                <div onClick={showModal} className='hover--content'>Learn More</div>
+            </div>
+            <div className='image--container'>
+                <img src={Cover4} alt={`thumbnail_${Cover4}`} />
+                <div onClick={showModal} className='hover--content'>Learn More</div>
+            </div>
+            {/* <img className='image--container' src={Cover2} alt={`thumbnail_${Cover2}`} />
+            <img className='image--container' src={Cover3} alt={`thumbnail_${Cover3}`} />
+            <img className='image--container' src={Cover4} alt={`thumbnail_${Cover4}`} /> */}
         </div>
       </div>
         </>
