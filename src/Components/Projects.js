@@ -3,11 +3,12 @@ import HoverVideoPlayer from "react-hover-video-player";
 import PausedOverlay from "./PausedOverlay";
 import LoadingOverlay from "./LoadingOverlay";
 
-import Video1 from '../Media/2022-03-04 22-08-02.mp4'
+import Video1 from '../Media/video1.mp4'
 import Cover1 from '../Media/emoji.png'
 import Cover2 from '../Media/message.png'
 import Cover3 from '../Media/ml.png'
 import Cover4 from '../Media/portfolio.png'
+import closeIcon from '../Media/close.png'
 
 function Projects(){
     const [isModalActive, setIsModalActive] = React.useState(false)
@@ -16,15 +17,22 @@ function Projects(){
         transition: 'opacity 0.9s ease-in'
     }
      const showModal = () =>{
-        // e.preventDefault()
         setIsModalActive(!isModalActive)
         console.log(isModalActive)
+        document.body.style.overflow = isModalActive ? 'unset' : 'hidden'
     }
     const modal = 
     (<div className='modal--container'> 
         <div style={styleChange} className='content--container'>
-        <div onClick={showModal} className='btn--close'>Close</div>
-            peepeepoopoo
+            <div onClick={showModal} className='btn--close'>
+                <img src={closeIcon}/>
+            </div>
+            <video muted loop autoPlay>
+                <source src={Video1} type='video/mp4'/>
+            </video>
+            <h2 className='content--title'>App Name</h2>
+            <p className='content--details'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p className='content--description'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, wh</p>
         </div>
     </div>)
     
