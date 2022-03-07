@@ -18,8 +18,11 @@ header {
   flex-direction: column;
   height: 100vh;
   width: 99vw;
+  margin: 0;
+  padding: 0;
   justify-content: center;
   align-content: flex-start;
+  border-bottom: 1px solid white;
 }
 
 nav {
@@ -49,8 +52,8 @@ h1 {
 }
 
 h3:hover {
-  font-weight: bold;
-  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+  color: #b40416;
+  transition: transform 0.5s ease-in-out;
 }
 
 video {
@@ -81,8 +84,10 @@ video {
   color: #ffffff;
   font-size: 8vw;
   font-weight: 100;
-  margin-left: 5vw;
+  margin: 0 0 5vw 5vw;
+  padding: 0;
   width: max(80vw, 50vw);
+  border-top: 1rem solid white;
 }
 
 h2>span {
@@ -100,6 +105,7 @@ h2>span {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
+  border-bottom: 1px solid white;
 }
 
 .about--container {
@@ -136,7 +142,7 @@ h2>span {
 }
 
 .image--container:hover img{
-  filter: blur(3px) brightness(50%) ;
+  filter:  brightness(50%);
 }
 
 .image--container:hover .hover--content{
@@ -156,19 +162,23 @@ h2>span {
   width: 50%;
   padding: 15px;
   transition: all 0.3s ease-in-out;
-  border-radius: 10px;
   user-select: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'ivypresto', serif;
   font-size: 1.5vmax;
-  color: #ffffff;
+  color: #000000;
   opacity: 0;
-  background: rgb(195,248,255);
-  background: linear-gradient(270deg, rgb(0, 225, 255) 0%, rgba(56,70,255,1) 100%);
+  /* background: linear-gradient(270deg, rgb(0, 225, 255) 0%, rgba(56,70,255,1) 100%); */
+  background: #f1f1f1;
 }
 
 .hover--content:active{
-  box-shadow: inset 0 0 10px #04003f;
+  box-shadow: inset 0 0 10px #000000;
   filter: brightness(80%);
+  transition:  0.1s ease-in-out;
+}
+.hover--content:hover{
+  color: #f1f1f1;
+  background: #000000;
   transition:  0.1s ease-in-out;
 }
 
@@ -187,18 +197,17 @@ h2>span {
   width: max(40vmax, 70vmin);
   height: 80vh;
   border-radius: 20px;
-  background: #ffffff;
+  background: #f1f1f1;
   opacity: 0;
 }
 
 .content--title {
-  margin: 2rem 0 2rem 1rem;
   font-size: 3vmax;
   width: 100%;
 }
 
 .content--description {
-  margin: 0 0 0 1rem;
+  margin: 0 0 0 0rem;
   font-size: 1.5vmax;
   width: 100%;
 }
@@ -252,7 +261,7 @@ h2>span {
 }
 
 .btn--close>img:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   transition: all 0.2s ease-in-out;
 }
 
@@ -308,7 +317,8 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: #d3a13b;
+  color: #b40416;
+  transition: 0.3s ease-in-out;
 }
 
 /* selected link */

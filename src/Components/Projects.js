@@ -4,10 +4,10 @@ import PausedOverlay from "./PausedOverlay";
 import LoadingOverlay from "./LoadingOverlay";
 
 import Video1 from '../Media/video1.mp4'
-import Cover1 from '../Media/emoji.png'
-import Cover2 from '../Media/message.png'
-import Cover3 from '../Media/ml.png'
-import Cover4 from '../Media/portfolio.png'
+import Cover1 from '../Media/Cover1.png'
+import Cover2 from '../Media/Cover2.png'
+import Cover3 from '../Media/Cover3.png'
+import Cover4 from '../Media/Cover4.png'
 import closeIcon from '../Media/close.png'
 
 function Projects(){
