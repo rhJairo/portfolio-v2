@@ -1,5 +1,6 @@
 {
-    "projects": [
+    "projects": 
+    [
         {
             "id": 1,
             "name": "Machine Learning App",
