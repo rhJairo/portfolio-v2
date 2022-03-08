@@ -1,35 +1,35 @@
 {
     "projects": [
         {
-            "id": "1",
+            "id": 1,
             "name": "Machine Learning App",
             "details": "Build using Ternsorflow.js React.js, Html, CSS, JavaScript.",
             "description": "",
-            "cover": "../Media/Cover1.png",
+            "cover": "Cover1.png",
             "video": "../Media/Video1.mp4"
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "Real-time Chatroom App",
             "details": "Build using Firebase's Google Autentication API, Firestore (NoSQL database), React.js, Html, CSS, JavaScript.",
             "description": "Login with your Google Account and enter the chatroom.",
-            "cover": "../Media/Cover2.png",
+            "cover": "Cover2.png",
             "video": "../Media/Video2.mp4"
         },
         {
-            "id": "3",
+            "id": 3,
             "name": "Emoji Hangman Game",
             "details": "Build using a free Movie API to fetch data, React.js, Html, CSS, JavaScript.",
             "description": "Play the classic game hangman and try to guess the movie before the emoji dies.",
-            "cover": "../Media/Cover3.png",
+            "cover": "Cover3.png",
             "video": "../Media/Video3.mp4"
         },
         {
-            "id": "4",
+            "id": 4,
             "name": "Personal Portfolio Webpage",
             "details": "Build using Gsap, React.js, Html, CSS, JavaScript.",
             "description": "Checkout the codebase of this very website.",
-            "cover": "../Media/Cover4.png",
+            "cover": "Cover4.png",
             "video": "../Media/Video4.mp4"
         }
     ]

@@ -137,6 +137,15 @@ h2>span {
   width: 40vw;
 }
 
+.image--container>h4{
+  position: absolute;
+  top: 18%;
+  left: 7%;
+  margin: 0;
+  padding: 0;
+  font-size: 5vw;
+  font-weight: 100;
+}
 .image--container *{
   transition: all 0.35s ease-in-out;
 }
@@ -237,7 +246,7 @@ h2>span {
   display: flex;
   font-family: 'Montserrat', sans-serif;
   justify-content: center;
-  background: rgba(255, 0, 0, 0);
+  background: rgba(255, 255, 255, 0.096);
   backdrop-filter: brightness( 30% );
   -webkit-backdrop-filter: blur( 4px );
 }

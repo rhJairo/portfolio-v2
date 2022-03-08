@@ -1,22 +1,19 @@
 import React from 'react'
-import HoverVideoPlayer from "react-hover-video-player";
-import PausedOverlay from "./PausedOverlay";
-import LoadingOverlay from "./LoadingOverlay";
+import Data from '../data.json'
 
 import Video1 from '../Media/video1.mp4'
-import Cover1 from '../Media/Cover1.png'
-import Cover2 from '../Media/Cover2.png'
-import Cover3 from '../Media/Cover3.png'
-import Cover4 from '../Media/Cover4.png'
 import closeIcon from '../Media/close.png'
 
 function Projects(){
+    const imagesFolder = require.context('../Media/',true)
     const [isModalActive, setIsModalActive] = React.useState(false)
+
     const styleChange = {
         opacity: '1',
         transition: 'opacity 0.9s ease-in'
     }
-     const showModal = () =>{
+    
+    const showModal = () =>{
         setIsModalActive(!isModalActive)
         console.log(isModalActive)
         document.body.style.overflow = isModalActive ? 'unset' : 'hidden'
@@ -35,59 +32,26 @@ function Projects(){
             <p className='content--description'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, wh</p>
         </div>
     </div>)
-    
-    
-    console.log(isModalActive)
+
+    const projectsCovers = Data.projects.map((project) => {
+        const style = {
+            color: project.id%2 === 0 ? 'white' : 'black'
+        }
+        return(
+        <div key={project.id} className='image--container'>
+            <img src={require(`../Media/${project.cover}`)}  />
+            <h4 style={style} >{project.name}</h4>
+            <div onClick={showModal} className='hover--content'>Learn More</div>
+        </div>)
+    })
     return(
         <>
         <h2 className='section--title' id='projects'>Here you can check <span>some</span> of <span>my projects</span></h2>
         <div className='projects--container'>
         
         <div className='p-wrap'>
-            {/* <HoverVideoPlayer
-                className='image--container'
-                videoSrc={Video1}
-                pausedOverlay={<PausedOverlay imageURL={Cover1}/>}
-                loadingOverlay={<LoadingOverlay />}
-            />
-            <HoverVideoPlayer
-                className='image--container'
-                videoSrc={Video1}
-                pausedOverlay={<PausedOverlay imageURL={Cover2}/>}
-                loadingOverlay={<LoadingOverlay />}
-            />
-            <HoverVideoPlayer
-                className='image--container'
-                videoSrc={Video1}
-                pausedOverlay={<PausedOverlay imageURL={Cover3}/>}
-                loadingOverlay={<LoadingOverlay />}
-            />
-            <HoverVideoPlayer
-                className='image--container'
-                videoSrc={Video1}
-                pausedOverlay={<PausedOverlay imageURL={Cover4}/>}
-                loadingOverlay={<LoadingOverlay />}
-            /> */}
             {isModalActive && modal}
-            <div className='image--container'>
-                <img src={Cover1} alt={`thumbnail_${Cover1}`} />
-                <div onClick={showModal} className='hover--content'>Learn More</div>
-            </div>
-            <div className='image--container'>
-                <img src={Cover2} alt={`thumbnail_${Cover2}`} />
-                <div onClick={showModal} className='hover--content'>Learn More</div>
-            </div>
-            <div className='image--container'>
-                <img src={Cover3} alt={`thumbnail_${Cover3}`} />
-                <div onClick={showModal} className='hover--content'>Learn More</div>
-            </div>
-            <div className='image--container'>
-                <img src={Cover4} alt={`thumbnail_${Cover4}`} />
-                <div onClick={showModal} className='hover--content'>Learn More</div>
-            </div>
-            {/* <img className='image--container' src={Cover2} alt={`thumbnail_${Cover2}`} />
-            <img className='image--container' src={Cover3} alt={`thumbnail_${Cover3}`} />
-            <img className='image--container' src={Cover4} alt={`thumbnail_${Cover4}`} /> */}
+            {projectsCovers}
         </div>
       </div>
         </>
