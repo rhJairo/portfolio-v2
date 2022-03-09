@@ -4,8 +4,8 @@ import Profile from '../Media/about.jpg'
 function About(){
     return(
         <>
-        <div className="about--container">
         <h2 id='about' className="section--title">Hi I'm <span>Jairo</span></h2>
+        <div className="about--container">
             <div className="about--content">
                 <p className="about--description">
                     I'm a Mexican Sofware Engineer, I focus mainly on web development
