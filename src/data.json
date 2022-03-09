@@ -13,7 +13,7 @@
             "id": 2,
             "name": "Real-time Chatroom App",
             "details": "Build using Firebase's Google Autentication API, Firestore (NoSQL database), React.js, Html, CSS, JavaScript.",
-            "description": "Login with your Google Account and enter the chatroom.",
+            "description": "Login with your Google Account and enter the chatroom. The automoderation was not implemented because its a payed feature.",
             "cover": "Cover2.png",
             "video": "../Media/Video2.mp4"
         },
