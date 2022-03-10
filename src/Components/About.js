@@ -4,13 +4,15 @@ import Profile from '../Media/about.jpg'
 function About(){
     return(
         <>
-        <h2 id='about' className="section--title">Hi I'm <span>Jairo</span></h2>
+        <div className='line-about'></div>
+        <div className="title--wraper">
+            <h2 id='about' className="about--title">Hi I'm <span>Jairo</span></h2>
+        </div>
         <div className="about--container">
             <div className="about--content">
                 <p className="about--description">
-                    I'm a Mexican Sofware Engineer, I focus mainly on web development
-                    and I'm currently working on my backend knowledge and skills so I can
-                    be a more well-rounded developer. I have experience developing applications using the following technologies: <br/>
+                    I'm a Mexican Sofware Engineer, I focus mainly on web development.
+                     I have experience developing applications using the following technologies: <br/>
                     HTML, CSS, JavaScript, React, Sass, Next.js,
                     Firebase, MySQL, Git.
                 </p>

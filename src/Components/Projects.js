@@ -27,13 +27,11 @@ function Projects(){
     }
 
     const projectsCovers = Data.projects.map((project) => {
-        const textColor = {
-            color: project.id%2 === 0 ? 'white' : 'black'
-        }
+
         return(
         <div key={project.id} className='image--container'>
             <img src={require(`../Media/${project.cover}`)}  />
-            <h4 style={textColor} >{project.name}</h4>
+            <h4 className='thumbnail-text' >{project.name}</h4>
             <div onClick={() => showModal(project.description, project.details, project.name)} className='hover--content'>Learn More</div>
         </div>
         
@@ -43,7 +41,10 @@ function Projects(){
     
     return(
     <>
-        <h2 className='section--title' id='projects'>Here you can check <span>some</span> of <span>my projects</span></h2>
+        <div className='line-project' id='projects'></div>
+        <div className='title--wraper'>
+            <h2 className='project--title' >Here you can check <span>some</span> of <span>my projects</span></h2>
+        </div>
         <div className='projects--container'>
             <div className='p-wrap'>
                 {modalInfo.isActive && <Modal name={modalInfo.title} description={modalInfo.description} details={modalInfo.details} close={() => setModalInfo(modalObj)} />}
