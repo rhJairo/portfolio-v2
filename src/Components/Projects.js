@@ -27,14 +27,12 @@ function Projects(){
     }
 
     const projectsCovers = Data.projects.map((project) => {
-
         return(
         <div key={project.id} className='image--container'>
-            <img src={require(`../Media/${project.cover}`)}  />
+            <img className='thumbnail-image' src={require(`../Media/${project.cover}`)}  />
             <h4 className='thumbnail-text' >{project.name}</h4>
             <div onClick={() => showModal(project.description, project.details, project.name)} className='hover--content'>Learn More</div>
         </div>
-        
         )
     })
     document.body.style.overflow = modalInfo.scroll

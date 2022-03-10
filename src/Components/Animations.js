@@ -7,8 +7,8 @@ function Animations(){
     
   React.useLayoutEffect(()=>{
     let tl = gsap.timeline({delay: 0.7}),
-    firstBg = document.querySelectorAll('.bg-first'),
-    secBg = document.querySelectorAll('.bg-second'),
+    firstBg = document.querySelectorAll('.bg-1'),
+    secBg = document.querySelectorAll('.bg-2'),
     word  = document.querySelectorAll('.words');
     
     tl.to(firstBg, {scaleX:1, duration: 0.2 })
@@ -22,29 +22,28 @@ function Animations(){
         //projects title
         let tl2 = gsap.timeline({
             scrollTrigger: {
-                trigger: '.project--title',
-                start: 'top center',
+                trigger: 'header',
+                start: 'bottom center',
                 // markers: true,
                 scrub: true
             }
         })
         tl2
+        .from(".project--title", { y: 200, opacity: 0 }, "text")
         .from(".line-project", {scaleX: 0, transformOrigin: "left center"})
-        .from(".project--title", { duration: 0.5, y: -400 }, "text");
         
         
         //about title
         let tl3 = gsap.timeline({
             scrollTrigger: {
-                trigger: '.p-wrap',
-                start: 'top center',
-                markers: true,
+                trigger: '.about--title',
+                start: 'top bottom',
+                // markers: true,
                 scrub: true
             }
         })
         tl3
-        .from(".line-about", {scaleX: 0, transformOrigin: "center"})
-        .from(".about--title", { x: -200 , opacity: 0}, "text");
+        .from(".about--title", { x: -200 , opacity: 0}, "text")
         
         
         //project images
@@ -56,7 +55,31 @@ function Animations(){
             }
         })
         tl4
-        .from("img, .hover--content", { duration: 0.50, y: 600 }, "text")
+        .from(".thumbnail-image, .hover--content", { duration: 0.50, y: 600 }, "text")
+
+        let tl5 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.about--content',
+                start: 'top center',
+                markers: true
+            }
+        })
+
+        let bg3 = document.querySelectorAll('.bg-3'),
+        bg4 = document.querySelectorAll('.bg-4'),
+        bg5 = document.querySelectorAll('.bg-5'),
+        bg6 = document.querySelectorAll('.bg-6'),
+        word2  = document.querySelectorAll('.about--description');
+        
+        tl5.to(bg3, {scaleX:1, duration: 0.2 })
+        .to(bg4, {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+        .to(bg5, {scaleX:1, duration: 0.2})
+        .to(bg6, {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+        .to(word2, {opacity:1, duration: 0.1})  
+        .to(bg3, {scaleX:0, duration: 0.2})
+        .to(bg4, {scaleX:0, duration: 0.2})
+        .to(bg5, {scaleX:0, duration: 0.2})
+        .to(bg6, {scaleX:0, duration: 0.2});
     },[])
 
     return(<></>)

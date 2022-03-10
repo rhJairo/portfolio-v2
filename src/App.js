@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Animations />
-      <Navbar />
+      {/* <Navbar /> */}
       <Header />
       <Projects />
       <About />
@@ -22,3 +22,12 @@ function App() {
 }
 
 export default App;
+
+/*
+correct bad practices
+-declaring the child inside the parent in Projects.js in the projectCovers
+-can use spread to pass data to childs instead of multiple individual props
+-use fragments instead of divs
+-useMemo to prevent needless rerenders
+-curry functions for functions that take events as arguments
+*/
