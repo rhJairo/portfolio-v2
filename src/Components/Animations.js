@@ -24,13 +24,13 @@ function Animations(){
             scrollTrigger: {
                 trigger: 'header',
                 start: 'bottom center',
-                // markers: true,
-                scrub: true
+                markers: true,
+                // scrub: true
             }
         })
         tl2
+        .from(".line-project", {scaleX: 0, transformOrigin: " center"})
         .from(".project--title", { y: 200, opacity: 0 }, "text")
-        .from(".line-project", {scaleX: 0, transformOrigin: "left center"})
         
         
         //about title
@@ -61,7 +61,7 @@ function Animations(){
             scrollTrigger: {
                 trigger: '.about--content',
                 start: 'top center',
-                markers: true
+                // markers: true
             }
         })
 
