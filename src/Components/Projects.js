@@ -14,20 +14,27 @@ function Projects(){
         isActive: false
     }
     const [modalInfo, setModalInfo] = React.useState(modalObj)
+    const [pagesAnimation, setpagesAnimation] = React.useState({count: 0, isActive: false})
 
     React.useLayoutEffect(()=>{
         let tl = gsap.timeline()
-        if(modalInfo.isActive){
+        if(pagesAnimation.count>0 && pagesAnimation.isActive){
+            console.log(pagesAnimation.count, pagesAnimation.isActive)
             tl.to('.page-1', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
-            tl.to('.page-2', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
-            tl.to('.page-2', {scaleX:0, duration: 0.2, transformOrigin: "left center",  delay:0.2 })
-            tl.to('.page-1', {scaleX:0, duration: 0.2, transformOrigin: "left center"})
-            tl.from('.modal--container', { x: -500 , opacity: 0}, "text")
+            .to('.page-2', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+            .to('.page-3', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+            .to('.modal--container', { scaleX:1, duration:0.2, transformOrigin: 'right center'})
+            // .to('.page-2', {scaleX:0, duration: 0.2, transformOrigin: "left center",  delay:0.2 })
+            // .to('.page-1', {scaleX:0, duration: 0.2, transformOrigin: "left center"});
+        }else if(pagesAnimation.count>0 && !pagesAnimation.isActive){
+            // tl.to('.modal--container', { scaleX:0, duration:0.2, transformOrigin: 'left center'})
+            // .to('.page-1', {scaleX:1, duration: 0.2, transformOrigin: "left center"})
+            // .to('.page-2', {scaleX:1, duration: 0.2, transformOrigin: "left center"})
+            tl.to('.page-3', {scaleX:0, duration: 0.2, transformOrigin: "right center",  delay:0.2 })
+            .to('.page-2', {scaleX:0, duration: 0.2, transformOrigin: "right center"})
+            .to('.page-1', {scaleX:0, duration: 0.2, transformOrigin: "right center"});
         }else{
-            tl.to('.page-1', {scaleX:1, duration: 0.2, transformOrigin: "left center"})
-            tl.to('.page-2', {scaleX:1, duration: 0.2, transformOrigin: "left center"})
-            tl.to('.page-2', {scaleX:0, duration: 0.2, transformOrigin: "right center",  delay:0.2 })
-            tl.to('.page-1', {scaleX:0, duration: 0.2, transformOrigin: "right center"})
+            console.log(pagesAnimation.count, pagesAnimation.isActive)
         }
         // use a conditional and use the active property in the modalInfo 
         // to make the 'pasing pages effect' work in the opposite direction
@@ -36,9 +43,15 @@ function Projects(){
 
         // TODO: implement custom cursor
         //       and sphere codepen with three.js
-    },[modalInfo])
+    },[pagesAnimation])
+
+    function closeModal(){
+        setpagesAnimation(prev => {return{count: prev.count + 1, isActive: !prev.isActive}})
+        setModalInfo(modalObj)
+    }
 
     function showModal(des, det, name) {
+        setpagesAnimation(prev => {return{count: prev.count + 1, isActive: !prev.isActive}})
         setModalInfo((prev) => {
             return {
                 ...prev,
@@ -70,11 +83,12 @@ function Projects(){
         </div>
         <div className='projects--container'>
             <div className='p-wrap'>
-                {modalInfo.isActive && <Modal name={modalInfo.title} description={modalInfo.description} details={modalInfo.details} close={() => setModalInfo(modalObj)} />}
+                {modalInfo.isActive && <Modal name={modalInfo.title} description={modalInfo.description} details={modalInfo.details} close={closeModal} />}
                 {projectsCovers}
             </div>
         <span className='page-1'></span>
         <span className='page-2'></span>
+        <span className='page-3'></span>
         </div>
     </>
     )

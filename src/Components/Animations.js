@@ -11,7 +11,8 @@ function Animations(){
     bg7 = document.querySelectorAll('.bg-7'),
     word  = document.querySelectorAll('.words');
     
-    tl.to(firstBg, {scaleX:1, duration: 0.2})
+    tl
+    .to(firstBg, {scaleX:1, duration: 0.2})
     .to(bg7, {scaleX:1, duration: 0.2, transformOrigin: "right center"})
     .from('.welcome', {x: -2000, duration: 0.2}, "text")
     .to(word, {opacity:1, duration: 0.1})  

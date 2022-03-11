@@ -5,7 +5,7 @@ function Header(){
     return(
         <header>
             <h1 className="first">
-                <h1 className="welcome">Welcome</h1>
+                <span className="welcome">Welcome</span>
                 <span className="words" >Jairo Rubio</span>
                 <span className="bg-1"></span>
             </h1>

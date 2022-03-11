@@ -78,6 +78,9 @@ html {
 .page-2{
   background-color: #074869;
 }
+.page-3{
+  background-color: #f1f1f1;
+}
 
 
 body {
@@ -326,7 +329,7 @@ h2>span {
 }
 
 .modal--container {
-  z-index: 3;
+  z-index: 4;
   opacity: 1;
   position: fixed;
   top: 0%;
@@ -337,6 +340,8 @@ h2>span {
   font-family: 'Mate', serif;
   justify-content: center;
   background: #f1f1f1;
+  transform-origin: left;
+  transform: scaleX(0);
 }
 
 .modal--container>.content--container {
