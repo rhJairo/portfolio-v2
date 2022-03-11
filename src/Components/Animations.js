@@ -8,14 +8,17 @@ function Animations(){
   React.useLayoutEffect(()=>{
     let tl = gsap.timeline({delay: 0.7}),
     firstBg = document.querySelectorAll('.bg-1'),
-    secBg = document.querySelectorAll('.bg-2'),
+    bg7 = document.querySelectorAll('.bg-7'),
     word  = document.querySelectorAll('.words');
     
-    tl.to(firstBg, {scaleX:1, duration: 0.2 })
-    .to(secBg, {scaleX:1, duration: 0.2})
+    tl.to(firstBg, {scaleX:1, duration: 0.2})
+    .to(bg7, {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+    .from('.welcome', {x: -2000, duration: 0.2}, "text")
     .to(word, {opacity:1, duration: 0.1})  
-    .to(firstBg, {scaleX:0, duration: 0.2, delay: 0.5})
-    .to(secBg, {scaleX:0, duration: 0.2});
+    .to('nav', {opacity:1, duration: 0.1})
+    .to('.welcome', {x: -2000, opacity: 0, duration: 0.2, delay: 0.6})
+    .to(firstBg, {scaleX:0, duration: 0.2})
+    .to(bg7, {scaleX:0, duration: 0.2});
     
     gsap.registerPlugin(ScrollTrigger);
                 
@@ -24,38 +27,38 @@ function Animations(){
             scrollTrigger: {
                 trigger: 'header',
                 start: 'bottom center',
-                markers: true,
+                // markers: true,
                 // scrub: true
             }
         })
         tl2
-        .from(".line-project", {scaleX: 0, transformOrigin: " center"})
+        .from(".line-project", {scaleX: 0, transformOrigin: "center"})
         .from(".project--title", { y: 200, opacity: 0 }, "text")
         
         
         //about title
         let tl3 = gsap.timeline({
             scrollTrigger: {
-                trigger: '.about--title',
-                start: 'top bottom',
+                trigger: '.p-wrap',
+                start: '70% bottom',
                 // markers: true,
                 scrub: true
             }
         })
         tl3
-        .from(".about--title", { x: -200 , opacity: 0}, "text")
+        .from(".about--title", { x: -500 , opacity: 0}, "text")
         
         
         //project images
         let tl4 = gsap.timeline({
             scrollTrigger: {
                 trigger: '.p-wrap',
-                start: 'top 70%',
+                start: 'top center',
                 // markers: true
             }
         })
         tl4
-        .from(".thumbnail-image, .hover--content", { duration: 0.50, y: 600 }, "text")
+        .from(".thumbnail-image, .hover--content", { duration: 0.2, y: 600 }, "text")
 
         let tl5 = gsap.timeline({
             scrollTrigger: {

@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Animations />
-      {/* <Navbar /> */}
+      <Navbar />
       <Header />
       <Projects />
       <About />

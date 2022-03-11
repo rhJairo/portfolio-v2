@@ -13,7 +13,7 @@ function About(){
                     <p className="about--description">
                     I'm a Mexican Sofware Engineer, I focus mainly on web development.
                      I have experience developing applications using the following technologies: <br/>
-                    HTML, CSS, JavaScript, React, Sass, Next.js,
+                    HTML, CSS, JavaScript, React, Sass, Next.js, Gsap,
                     Firebase, MySQL, Git.
                     </p>
                     <span className="bg-3"></span>

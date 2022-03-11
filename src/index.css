@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Raleway:wght@100;200&family=Roboto:wght@100&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mate&display=swap');
 html {
   scroll-behavior: smooth;
 }
@@ -7,6 +6,17 @@ html {
 .first,
 .second {
   position: relative;
+}
+.welcome {
+  user-select: none;
+  position: absolute;
+  z-index: 11;
+  font-size: 25vw;
+  font-style: italic;
+  overflow: visible;
+  color: #1f1f1f;
+  display: flex;
+  justify-content: center;
 }
 
 .words{
@@ -16,7 +26,8 @@ html {
 }
 
 .bg-1,
-.bg-2 {
+.bg-2,
+.bg-7 {
   background-color: #f1f1f1;
   display: block;
   width: 100%;
@@ -33,22 +44,39 @@ html {
 .bg-4,
 .bg-5,
 .bg-6 {
-  background-color: #000000;
+  background-color: #074869;
   display: block;
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 5;
   transform-origin: left;
   transform: scaleX(0);
 }
 
-.bg-1>h1 {
-  color: #1f1f1f;
-  display: flex;
-  justify-content: center;
+.page-1,
+.page-2,
+.page-3,
+.page-4
+{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.page-1{
+  background-color: #B806C2;
+}
+.page-2{
+  background-color: #074869;
 }
 
 
@@ -62,6 +90,7 @@ body {
 }
 
 header {
+  user-select: none;
   background-color: #1f1f1f;
   display: flex;
   flex-direction: column;
@@ -75,10 +104,11 @@ header {
 }
 
 nav {
-  background: #0000008f;
-  z-index: 2;
+  opacity: 0;
   display: flex;
   justify-content: flex-end;
+  background: #0000008f;
+  z-index: 3;
   position: fixed;
   height: 3rem;
   width: 100vw;
@@ -87,15 +117,19 @@ nav {
   -webkit-backdrop-filter: blur(4px);
 }
 
+
 h1 {
   padding: 0;
   margin: 0;
   font-weight: 100;
-  font-style: italic;
   max-width: 100%;
   font-size: 10vw;
   text-align: left;
   color: #f1f1f1;
+}
+
+.second>span{
+  font-style: italic;
 }
 
 h1>span {
@@ -123,7 +157,7 @@ video {
 }
 
 .line-project,.line-about ,.line-contact{
-  background:rgb(255, 0, 0);
+  background:#b40416;
   width: 99vw;
   height: 20px;
 }
@@ -133,7 +167,7 @@ video {
 }
 
 .project--title, .about--title, .contact--title {
-  color: #000000;
+  color: #1f1f1f;
   font-size: 8vw;
   font-weight: 100;
   margin: 0 0 5vw 5vw;
@@ -165,6 +199,7 @@ h2>span {
 }
 
 .p-wrap {
+  position: relative;
   display: flex;
   overflow: hidden;
   flex-wrap: wrap;
@@ -173,6 +208,14 @@ h2>span {
 }
 
 .thumbnail-text {
+  user-select: none;
+  position: absolute;
+  top: 18%;
+  left: 5%;
+  margin: 0;
+  padding: 0;
+  font-size: 5vw;
+  font-weight: 100;
   color: #f1f1f1;
 }
 .thumbnail-image {
@@ -185,21 +228,11 @@ h2>span {
   overflow: hidden;
   margin: -0.5vh 0 0 0;
   width: 40vw;
+  border: #f1f1f1 solid 5px;
 }
 
 .image--container>img {
   width: 40vw;
-}
-
-.image--container>h4 {
-  user-select: none;
-  position: absolute;
-  top: 18%;
-  left: 7%;
-  margin: 0;
-  padding: 0;
-  font-size: 5vw;
-  font-weight: 100;
 }
 
 .image--container * {
@@ -262,7 +295,6 @@ h2>span {
   align-items: center;
   width: max(40vmax, 70vmin);
   height: 80vh;
-  background: #f1f1f1;
   opacity: 0;
 }
 
@@ -302,11 +334,9 @@ h2>span {
   width: 100vw;
   height: 130vh;
   display: flex;
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Mate', serif;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.637);
-  backdrop-filter: blur(10px) brightness(30%);
-  -webkit-backdrop-filter: blur(4px);
+  background: #f1f1f1;
 }
 
 .modal--container>.content--container {
@@ -336,7 +366,6 @@ h2>span {
   margin: 0;
   color: #000000;
   width: 99vw;
-  height: 90vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -349,23 +378,20 @@ h2>span {
 }
 
 .about--content {
-  /* display: grid;
+  display: grid;
+  width: 90%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  align-content: baseline; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 70vh;
+  align-content: baseline;
 }
 
-.about--content>img {
-  width: 30vw;
+.first>img {
+  width: 25vw;
 }
 
 .about--description {
-  font-size: 2.5rem;
+  font-family: 'Mate', serif;
+  font-size: 2rem;
   width: 40vw;
   height: 100%;
   opacity: 0;
@@ -376,7 +402,7 @@ h2>span {
 }
 
 .contact--container {
-  background: #b40416;
+  background: #690D16;
   padding: 0;
   margin: 0;
   color: #000000;
@@ -430,6 +456,20 @@ h2>span {
   }
 
   .content--container {
+    width: 100vw;
+  }
+
+
+  .about--content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+  .about--description{
+    padding-left: 1rem;
     width: 100vw;
   }
 }

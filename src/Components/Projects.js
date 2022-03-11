@@ -1,4 +1,6 @@
 import React from 'react'
+import { gsap } from 'gsap'
+
 import Modal from './InfoModal'
 import Data from '../data.json'
 
@@ -12,6 +14,15 @@ function Projects(){
         isActive: false
     }
     const [modalInfo, setModalInfo] = React.useState(modalObj)
+
+    React.useLayoutEffect(()=>{
+        let tl = gsap.timeline()
+        tl.to('.page-1', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+        tl.to('.page-2', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+        tl.to('.page-2', {scaleX:0, duration: 0.2, transformOrigin: "left center",  delay:0.2 })
+        tl.to('.page-1', {scaleX:0, duration: 0.2, transformOrigin: "left center"})
+
+    },[modalInfo])
 
     function showModal(des, det, name) {
         setModalInfo((prev) => {
@@ -48,6 +59,8 @@ function Projects(){
                 {modalInfo.isActive && <Modal name={modalInfo.title} description={modalInfo.description} details={modalInfo.details} close={() => setModalInfo(modalObj)} />}
                 {projectsCovers}
             </div>
+        <span className='page-1'></span>
+        <span className='page-2'></span>
         </div>
     </>
     )
