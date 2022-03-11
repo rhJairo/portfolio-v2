@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 html {
   scroll-behavior: smooth;
 }
@@ -193,7 +193,7 @@ h2>span {
   margin: 0;
   font-weight: bold;
   width: 99vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -337,7 +337,7 @@ h2>span {
   width: 100vw;
   height: 130vh;
   display: flex;
-  font-family: 'Mate', serif;
+  font-family: 'Roboto', sans-serif;
   justify-content: center;
   background: #f1f1f1;
   transform-origin: left;
@@ -395,7 +395,7 @@ h2>span {
 }
 
 .about--description {
-  font-family: 'Mate', serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   width: 40vw;
   height: 100%;

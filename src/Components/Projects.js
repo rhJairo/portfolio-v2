@@ -77,18 +77,18 @@ function Projects(){
     
     return(
     <>
-        <div className='line-project' id='projects'></div>
-        <div className='title--wraper'>
-            <h2 className='project--title' >Here you can check <span>some</span> of <span>my projects</span></h2>
-        </div>
         <div className='projects--container'>
-            <div className='p-wrap'>
-                {modalInfo.isActive && <Modal name={modalInfo.title} description={modalInfo.description} details={modalInfo.details} close={closeModal} />}
-                {projectsCovers}
+            <div className='line-project' id='projects'></div>
+            <div className='title--wraper'>
+                <h2 className='project--title' >Here you can check <span>some</span> of <span>my projects</span></h2>
             </div>
-        <span className='page-1'></span>
-        <span className='page-2'></span>
-        <span className='page-3'></span>
+                <div className='p-wrap'>
+                    {modalInfo.isActive && <Modal name={modalInfo.title} description={modalInfo.description} details={modalInfo.details} close={closeModal} />}
+                    {projectsCovers}
+                </div>
+            <span className='page-1'></span>
+            <span className='page-2'></span>
+            <span className='page-3'></span>
         </div>
     </>
     )

@@ -14,20 +14,22 @@ function Animations(){
     tl
     .to(firstBg, {scaleX:1, duration: 0.2})
     .to(bg7, {scaleX:1, duration: 0.2, transformOrigin: "right center"})
-    .from('.welcome', {x: -2000, duration: 0.2}, "text")
+    .from('.welcome', {x: -2000, duration: 0.2},"text")
     .to(word, {opacity:1, duration: 0.1})  
     .to('nav', {opacity:1, duration: 0.1})
     .to('.welcome', {x: -2000, opacity: 0, duration: 0.2, delay: 0.6})
     .to(firstBg, {scaleX:0, duration: 0.2})
-    .to(bg7, {scaleX:0, duration: 0.2});
+    .to(bg7, {scaleX:0, duration: 0.2, transformOrigin: "left center"});
     
     gsap.registerPlugin(ScrollTrigger);
-                
+        
         //projects title
         let tl2 = gsap.timeline({
             scrollTrigger: {
-                trigger: 'header',
-                start: 'bottom center',
+                trigger: '.projects--container',
+                start: 'top center',
+                end: '40% ',
+                toggleActions:'play reset play reset',
                 // markers: true,
                 // scrub: true
             }
@@ -54,36 +56,32 @@ function Animations(){
         let tl4 = gsap.timeline({
             scrollTrigger: {
                 trigger: '.p-wrap',
-                start: 'top center',
-                // markers: true
+                start: '-10% center',
+                toggleActions:'play reset play reset',
+                markers: true
             }
         })
         tl4
         .from(".thumbnail-image, .hover--content", { duration: 0.2, y: 600 }, "text")
 
+        //about text
         let tl5 = gsap.timeline({
             scrollTrigger: {
                 trigger: '.about--content',
                 start: 'top center',
+                toggleActions:'play reset play reset',
                 // markers: true
             }
         })
-
-        let bg3 = document.querySelectorAll('.bg-3'),
-        bg4 = document.querySelectorAll('.bg-4'),
-        bg5 = document.querySelectorAll('.bg-5'),
-        bg6 = document.querySelectorAll('.bg-6'),
-        word2  = document.querySelectorAll('.about--description');
-        
-        tl5.to(bg3, {scaleX:1, duration: 0.2 })
-        .to(bg4, {scaleX:1, duration: 0.2, transformOrigin: "right center"})
-        .to(bg5, {scaleX:1, duration: 0.2})
-        .to(bg6, {scaleX:1, duration: 0.2, transformOrigin: "right center"})
-        .to(word2, {opacity:1, duration: 0.1})  
-        .to(bg3, {scaleX:0, duration: 0.2})
-        .to(bg4, {scaleX:0, duration: 0.2})
-        .to(bg5, {scaleX:0, duration: 0.2})
-        .to(bg6, {scaleX:0, duration: 0.2});
+        tl5.to('.bg-3', {scaleX:1, duration: 0.2 })
+        .to('.bg-4', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+        .to('.bg-5', {scaleX:1, duration: 0.2})
+        .to('.bg-6', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
+        .to('.about--description', {opacity:1, duration: 0.1})  
+        .to('.bg-3', {scaleX:0, duration: 0.2})
+        .to('.bg-4', {scaleX:0, duration: 0.2})
+        .to('.bg-5', {scaleX:0, duration: 0.2})
+        .to('.bg-6', {scaleX:0, duration: 0.2});
     },[])
 
     return(<></>)
