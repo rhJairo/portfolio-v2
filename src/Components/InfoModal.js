@@ -4,13 +4,10 @@ import Video1 from '../Media/video1.mp4'
 import closeIcon from '../Media/close.svg'
 
 function InfoModal(props){
-    const styleChange = {
-        opacity: '1',
-        transition: 'opacity 0.9s ease-in'
-    }
+    
     return(
         <div className='modal--container'> 
-            <div style={styleChange} className='content--container'>
+            <div className='content--container'>
                 <div onClick={props.close} className='btn--close'>
                     <img src={closeIcon}/>
                 </div>

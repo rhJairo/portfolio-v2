@@ -35,7 +35,7 @@ html {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 6;
   transform-origin: left;
   transform: scaleX(0);
 }
@@ -51,7 +51,7 @@ html {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 5;
+  z-index: 3;
   transform-origin: left;
   transform: scaleX(0);
 }
@@ -67,7 +67,7 @@ html {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 5;
+  z-index: 3;
   transform-origin: left;
   transform: scaleX(0);
 }
@@ -108,7 +108,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   background: #0000008f;
-  z-index: 3;
+  z-index: 5;
   position: fixed;
   height: 3rem;
   width: 100vw;
@@ -295,7 +295,6 @@ h2>span {
   align-items: center;
   width: max(40vmax, 70vmin);
   height: 80vh;
-  opacity: 0;
 }
 
 .content--title {
@@ -328,6 +327,7 @@ h2>span {
 
 .modal--container {
   z-index: 3;
+  opacity: 1;
   position: fixed;
   top: 0%;
   left: 0%;
