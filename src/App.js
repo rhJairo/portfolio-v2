@@ -16,8 +16,8 @@ function App() {
       <Animations />
       <Navbar />
       <Header />
-      <Projects />
       <About />
+      <Projects />
       <Contact />
     </>
   );

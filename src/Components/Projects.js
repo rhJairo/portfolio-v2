@@ -24,22 +24,13 @@ function Projects(){
             .to('.page-2', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
             .to('.page-3', {scaleX:1, duration: 0.2, transformOrigin: "right center"})
             .to('.modal--container', { scaleX:1, duration:0.2, transformOrigin: 'right center'})
-            // .to('.page-2', {scaleX:0, duration: 0.2, transformOrigin: "left center",  delay:0.2 })
-            // .to('.page-1', {scaleX:0, duration: 0.2, transformOrigin: "left center"});
         }else if(pagesAnimation.count>0 && !pagesAnimation.isActive){
-            // tl.to('.modal--container', { scaleX:0, duration:0.2, transformOrigin: 'left center'})
-            // .to('.page-1', {scaleX:1, duration: 0.2, transformOrigin: "left center"})
-            // .to('.page-2', {scaleX:1, duration: 0.2, transformOrigin: "left center"})
             tl.to('.page-3', {scaleX:0, duration: 0.2, transformOrigin: "right center",  delay:0.2 })
             .to('.page-2', {scaleX:0, duration: 0.2, transformOrigin: "right center"})
             .to('.page-1', {scaleX:0, duration: 0.2, transformOrigin: "right center"});
         }else{
             console.log(pagesAnimation.count, pagesAnimation.isActive)
         }
-        // use a conditional and use the active property in the modalInfo 
-        // to make the 'pasing pages effect' work in the opposite direction
-        // also to leave the last 'cover' active so it can disguise the closing
-        // of the modal since it cant be controlled bc its conditionaly rendered
 
         // TODO: implement custom cursor
         //       and sphere codepen with three.js
@@ -69,7 +60,7 @@ function Projects(){
         <div key={project.id} className='image--container'>
             <img className='thumbnail-image' src={require(`../Media/${project.cover}`)}  />
             <h4 className='thumbnail-text' >{project.name}</h4>
-            <div onClick={() => showModal(project.description, project.details, project.name)} className='hover--content'>Learn More</div>
+            <div onClick={() => showModal(project.description, project.details, project.name)} className='hover--content link'>Learn More</div>
         </div>
         )
     })
