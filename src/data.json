@@ -1,37 +1,77 @@
 {
-    "projects": 
-    [
-        {
-            "id": 1,
-            "name": "Machine Learning App",
-            "details": "Build using Ternsorflow.js React.js, Html, CSS, JavaScript.",
-            "description": "",
-            "cover": "Cover3.png",
-            "video": "../Media/Video1.mp4"
-        },
-        {
-            "id": 2,
-            "name": "Real-time Chatroom App",
-            "details": "Build using Firebase's Google Autentication API, Firestore (NoSQL database), React.js, Html, CSS, JavaScript.",
-            "description": "Login with your Google Account and enter the chatroom. The automoderation was not implemented because its a payed feature.",
-            "cover": "Cover3.png",
-            "video": "../Media/Video2.mp4"
-        },
-        {
-            "id": 3,
-            "name": "Emoji Hangman Game",
-            "details": "Build using a free Movie API to fetch data, React.js, Html, CSS, JavaScript.",
-            "description": "Play the classic game hangman and try to guess the movie before the emoji dies.",
-            "cover": "Cover3.png",
-            "video": "../Media/Video3.mp4"
-        },
-        {
-            "id": 4,
-            "name": "Personal Portfolio Webpage",
-            "details": "Build using Gsap, React.js, Html, CSS, JavaScript.",
-            "description": "Checkout the codebase of this very website.",
-            "cover": "Cover3.png",
-            "video": "../Media/Video4.mp4"
-        }
-    ]
+  "projects": [
+    {
+      "id": 1,
+      "name": "Online Text Editor",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js",
+        "Next.js",
+        "Next Auth",
+        "Firebase/Firestore",
+        "Firebase Google Auth",
+        "Tailwind",
+        "Material UI",
+        "Draft.js"
+      ],
+      "description": "This is a small project I made to practice what I learned in some Next.js tutorials as well as to making use of a NoSQL database with Firebase. The project is an online text editor inspired by google docs, users can access it by using their Google accounts. Each user can only see their own documents and therefore only modify those.",
+      "features": [
+        "Login page redirects to Google sign-in",
+        "Session is mantained through the application",
+        "Dashboard allows to create new documents and save them per user",
+        "Document can be modified and autosaves in the database."
+      ],
+      "analysis": "There's lots of features that could've been implemented, theres the searchbar for example I put it only beacause of aesthetic same as the document menu, but I think this was a good point to stop. The main pourpose I had in mind when I started was to understand better the way NextJS works and how it can be used in a more complex project as well as integrating front-end with back-end through Firebase's features not so much the text editing ones.",
+      "cover": "Cover1.gif",
+      "repo": "https://github.com/rhJairo/"
+    },
+    {
+      "id": 2,
+      "name": "Real-time Chatroom App",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js",
+        "Firebase/Firestore",
+        "Firebase Google Auth"
+      ],
+      "description": "This single chatroom app was a practice to use NoSQL databases and authentication services.",
+      "features": [
+        "The user sings in with their google account",
+        "Once in the chatroom you can send messages",
+        "The chat log is save in a Firebase/Firestore db"
+      ],
+      "analysis": "As in any project features can be added to improve the usability. The biggest drawback for me to continue doing this project is the fact that the Firebase features used to auto-moderate the chat, so that the bad word are deleted and the author banned from the chatroom, are paid.",
+      "cover": "Cover2.gif",
+      "repo": "https://github.com/rhJairo/"
+    },
+    {
+      "id": 3,
+      "name": "Emoji Hangman Game",
+      "technologies": ["HTML", "CSS", "JavaScript", "React.js", "Movie API"],
+      "description": "This app was a practice to use ReactJS main features as well as learn how to consume APIs with ReactJS.",
+      "features": [
+        "A random movie is fetched from the API",
+        "The description is displayed to help the user guess the name of the movie",
+        "If the player chooses a character that is not part of the name the emoji loses a life point",
+        "The game end once the emoji dies or the name of the movie is guessed"
+      ],
+      "analysis": "This was one of my first ReactJS project it was a good practice and in the future I want to implement a better UI, a reset button and change the Css since is a bit of a mess.",
+      "cover": "Cover3.gif",
+      "repo": "https://github.com/rhJairo/"
+    },
+    {
+      "id": 4,
+      "name": "Personal Portfolio Webpage",
+      "technologies": ["HTML", "CSS", "JavaScript", "React.js", "SASS", "GSAP"],
+      "description": "This is my personal portfolio I use to display my projects.",
+      "features": [],
+      "analysis": "It took some time to do this one maily because I didn't have a clear reference for the styling and all that so I ended up playing a lot with CSS and SASS.",
+      "cover": "Cover3.gif",
+      "repo": "https://github.com/rhJairo/"
+    }
+  ]
 }

@@ -1,22 +1,37 @@
 import React from "react";
 
-import Video1 from '../Media/video1.mp4'
 import closeIcon from '../Media/close.svg'
 
 function InfoModal(props){
+    console.log(props.technologies)
+    const technologies = props.technologies.map(elem => <li>{elem}</li>)
+    const features = props.features.map(elem => <li>{elem}</li>)
     
     return(
         <div className='modal--container'> 
             <div className='content--container'>
                 <div onClick={props.close} className='btn--close'>
-                    <img src={closeIcon}/>
+                    <img  src={closeIcon}/>
                 </div>
-                <video muted loop autoPlay>
-                    <source src={Video1} type='video/mp4'/>
-                </video>
                 <h2 className='content--title'>{props.name}</h2>
-                <p className='content--details'>{props.details}</p>
-                <p className='content--description'>{props.description}</p>
+                <img className="content--image" src={require(`../Media/${props.cover}`)}/>
+                <div>
+                <h5 className="content--subtitle">Description</h5>
+                <div className='content--description'>{props.description}</div>
+                </div>
+                <div>
+                <h5 className="content--subtitle">Features</h5>
+                <ol className='content--details'>{features}</ol>
+                </div>
+                <div>
+                <h5 className="content--subtitle">Technologies/Tools</h5>
+                <ul className='content--details'>{technologies}</ul>
+                </div>
+                <div>
+                <h5 className="content--subtitle">Afterthoughts</h5>
+                <div className='content--description'>{props.analysis}</div>
+                </div>
+                <a target="_blank" href={props.repo}><div>Source</div></a>
             </div>
         </div>
     )
