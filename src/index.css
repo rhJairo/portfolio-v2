@@ -471,11 +471,43 @@ h2 > span {
   margin: 0;
   color: #000000;
   width: 100vw;
-  height: 70vh;
+  height: 30vh;
   display: flex;
+  justify-content: center;
+}
+
+.contact--content{
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 90vw;
+  font-size: 2rem;
+}
+
+.contact--title{
+  font-weight: 900;
+}
+
+.contact--mail, .contact--links{
+  margin: 0 1rem 0 1rem;
+}
+
+.contact--links>img{
+  transition: all 0.2s ease-in;
+  width: 5rem;
+}
+
+.contact--links>img:hover{
+  transition: all 0.2s ease-in;
+  width: 5.5rem;
+}
+
+.contact--content>a:hover{
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  filter: brightness(200%);
 }
 
 @media (max-width: 900px) {

@@ -25,7 +25,7 @@
       ],
       "analysis": "There's lots of features that could've been implemented, theres the searchbar for example I put it only beacause of aesthetic same as the document menu, but I think this was a good point to stop. The main pourpose I had in mind when I started was to understand better the way NextJS works and how it can be used in a more complex project as well as integrating front-end with back-end through Firebase's features not so much the text editing ones.",
       "cover": "Cover1.gif",
-      "repo": "https://github.com/rhJairo/"
+      "repo": "https://github.com/rhJairo/text-editor-app"
     },
     {
       "id": 2,
@@ -46,7 +46,7 @@
       ],
       "analysis": "As in any project features can be added to improve the usability. The biggest drawback for me to continue doing this project is the fact that the Firebase features used to auto-moderate the chat, so that the bad word are deleted and the author banned from the chatroom, are paid.",
       "cover": "Cover2.gif",
-      "repo": "https://github.com/rhJairo/"
+      "repo": "https://github.com/rhJairo/chat-app"
     },
     {
       "id": 3,
@@ -61,7 +61,7 @@
       ],
       "analysis": "This was one of my first ReactJS project it was a good practice and in the future I want to implement a better UI, a reset button and change the Css since is a bit of a mess.",
       "cover": "Cover3.gif",
-      "repo": "https://github.com/rhJairo/"
+      "repo": "https://github.com/rhJairo/emoji-app"
     },
     {
       "id": 4,
@@ -71,7 +71,7 @@
       "features": [],
       "analysis": "It took some time to do this one maily because I didn't have a clear reference for the styling and all that so I ended up playing a lot with CSS and SASS.",
       "cover": "Cover3.gif",
-      "repo": "https://github.com/rhJairo/"
+      "repo": "https://github.com/rhJairo/portfolio-v2"
     }
   ]
 }

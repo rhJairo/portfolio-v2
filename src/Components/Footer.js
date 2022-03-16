@@ -4,7 +4,7 @@ function Footer(){
   return(
     <>
     <footer>
-      <p>2022 | Made with <span>❤️</span> by Jairo Rubio. </p>
+      <p>2022 | Made by Jairo Rubio. </p>
     </footer>
     </>
   )

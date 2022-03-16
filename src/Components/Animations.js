@@ -218,15 +218,6 @@ function Animations() {
         this.x += this.velX;
         this.y += this.velY;
       }
-
-      collisionDetect(balls) {
-        for (var i = 0, j = balls.length; i < j; i++) {
-          if (this != balls[i]) {
-            var dx = this.x - balls[i].x;
-            var dy = this.y - balls[i].y;
-          }
-        }
-      }
     }
 
     // Refresh the screen.
@@ -237,7 +228,6 @@ function Animations() {
       for (var i = 0, j = balls.length; i < j; i++) {
         balls[i].draw(ctx);
         balls[i].update();
-        balls[i].collisionDetect(balls);
       }
 
       requestAnimationFrame(loop.bind(window, width, height, ctx, balls));

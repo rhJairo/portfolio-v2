@@ -20,7 +20,7 @@ function About(){
                     <span className="bg-3"></span>
                 </div>
                 <div className="about--wrap">
-                    <img className="about--description" src={Profile}/>
+                    <img alt="technologies and tools" className="about--description" src={Profile}/>
                     <span className="bg-4"></span>
                 </div>
                 <div className="about--wrap">

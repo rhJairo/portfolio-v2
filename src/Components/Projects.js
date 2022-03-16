@@ -64,10 +64,7 @@ function Projects() {
           duration: 0.2,
           transformOrigin: "right center",
         });
-    } else {
-      console.log(pagesAnimation.count, pagesAnimation.isActive);
-    }
-    console.log(modalInfo.scroll)
+    } else {}
     
   }, [pagesAnimation]);
   
@@ -97,9 +94,9 @@ function Projects() {
         isActive: true,
       };
     });
-    document.body.style.overflow = modalInfo.scroll;
-
+    
   }
+  document.body.style.overflow = modalInfo.scroll;
 
   const projectsCovers = Data.projects.map((project) => {
     return (
@@ -120,7 +117,7 @@ function Projects() {
           }
           className="hover--content"
         > 
-          <img className="hover--more" src={More}/>
+          <img alt="arrow icon" className="hover--more" src={More}/>
         </div>
       </div>
     );

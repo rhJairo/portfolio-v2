@@ -11,10 +11,10 @@ function InfoModal(props){
         <div className='modal--container'> 
             <div className='content--container'>
                 <div onClick={props.close} className='btn--close'>
-                    <img  src={closeIcon}/>
+                    <img alt="close section icon" src={closeIcon}/>
                 </div>
                 <h2 className='content--title'>{props.name}</h2>
-                <img className="content--image" src={require(`../Media/${props.cover}`)}/>
+                <img alt={`functionality gif of project ${props.name}`} className="content--image" src={require(`../Media/${props.cover}`)}/>
                 <div>
                 <h5 className="content--subtitle">Description</h5>
                 <div className='content--description'>{props.description}</div>
@@ -31,7 +31,7 @@ function InfoModal(props){
                 <h5 className="content--subtitle">Afterthoughts</h5>
                 <div className='content--description'>{props.analysis}</div>
                 </div>
-                <a target="_blank" href={props.repo}><div>Source</div></a>
+                <a rel="noreferrer" target="_blank" href={props.repo}><div>Source</div></a>
             </div>
         </div>
     )
