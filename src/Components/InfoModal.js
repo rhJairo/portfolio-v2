@@ -3,7 +3,6 @@ import React from "react";
 import closeIcon from '../Media/close.svg'
 
 function InfoModal(props){
-    console.log(props.technologies)
     const technologies = props.technologies.map(elem => <li>{elem}</li>)
     const features = props.features.map(elem => <li>{elem}</li>)
     

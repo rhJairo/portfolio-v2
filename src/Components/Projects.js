@@ -26,7 +26,6 @@ function Projects() {
   React.useLayoutEffect(() => {
     let tl = gsap.timeline();
     if (pagesAnimation.count > 0 && pagesAnimation.isActive) {
-      console.log(pagesAnimation.count, pagesAnimation.isActive);
       tl.to(".page-1", {
         scaleX: 1,
         duration: 0.2,
